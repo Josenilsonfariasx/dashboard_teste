@@ -30,7 +30,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
     <div className="flex justify-center my-4">
       <a
         href="#"
-        onClick={() => onPageChange(currentPage - 1)}
+        onClick={() => onPageChange(currentPage === 1 ? totalPages : currentPage - 1)}
         className={`px-4 py-2 mx-1 ${currentPage === 1 ? "text-gray-500 cursor-not-allowed" : "text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white"}`}
       >
         <div className="flex items-center -mx-1">
@@ -46,7 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
           key={page}
           href="#"
           onClick={() => onPageChange(page)}
-          className={`hidden px-4 py-2 mx-1 ${page === currentPage ? "bg-blue-500 text-white" : "text-gray-700 transition-colors duration-300 transform bg-white rounded-md sm:inline dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white"}`}
+          className={`hidden px-4 py-2 mx-1 ${page === currentPage ? "bg-red-500 text-white" : "text-gray-700 transition-colors duration-300 transform bg-white rounded-md sm:inline dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white"}`}
         >
           {page}
         </a>
@@ -54,7 +54,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
 
       <a
         href="#"
-        onClick={() => onPageChange(currentPage + 1)}
+        onClick={() => onPageChange(currentPage === totalPages ? 1 : currentPage + 1)}
         className={`px-4 py-2 mx-1 ${currentPage === totalPages ? "text-gray-500 cursor-not-allowed" : "text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white"}`}
       >
         <div className="flex items-center -mx-1">
