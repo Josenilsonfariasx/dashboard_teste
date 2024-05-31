@@ -35,7 +35,7 @@ export const Home = () => {
           </Header>
           <div className="flex flex-col items-center py-6 ">
             <div className="flex-col mt-8">
-              <h2 className="font-mono my-4">Lista de Usuarios no sistema</h2>
+              <h2 className="font-mono my-4 text-white">Lista de Usuarios no sistema</h2>
               <Table users={listUsers} authenticatedUserId={Number(userId)} />
               <Pagination
                 currentPage={currentPage}
